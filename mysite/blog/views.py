@@ -6,6 +6,9 @@ from .models import Post
 from .forms import EmailPostForm
 from django.core.mail import send_mail
 
+def home(request):
+    return render(request, 'home.html')
+
 def post_list(request):
     object_list = Post.published.all()
     paginator = Paginator(object_list, 3) # 3 posts in each page
